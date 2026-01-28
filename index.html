@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netlify Page OK</title>
+
+  <style>
+    body {
+      background: #ffffff;
+      margin-bottom: 200px;
+      font-family: Arial, sans-serif;
+    }
+
+    @keyframes BackgroundGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .VCE {
+      color: #f2f2f2;
+      background: linear-gradient(
+        45deg,
+        #FCE38A,
+        #f5ad4d,
+        #fd81b5,
+        #f74689,
+        #ad5af3,
+        #8a13ef
+      );
+      background-size: 450% 100%;
+      animation: BackgroundGradient 30s ease infinite;
+      padding: 20px;
+      margin: 30px;
+      border-radius: 12px;
+    }
+
+    .VCE_Title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .JTime {
+      font-size: 20px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 15px 22px;
+      border: 3px solid #f2f2f2;
+      border-radius: 20px;
+      background: transparent;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="VCE">
+    <h2 class="VCE_Title">Visual Code Editor</h2>
+    <hr style="border: 3px solid #f2f2f2;">
+    <p class="JTime">Klik tombol untuk menampilkan waktu</p>
+
+    <button onclick="document.getElementById('Example').innerHTML = new Date().toString()">
+      Tampilkan Tanggal & Waktu
+    </button>
+
+    <p class="JTime" id="Example"></p>
+    <p class="JTime">Halaman ini 100% compatible Netlify</p>
+  </div>
+</body>
+</html>
