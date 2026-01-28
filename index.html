@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Netlify Page OK</title>
+  <title>VideyHub Landing Page</title>
+
+  <!-- WAJIB untuk HP -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO dasar -->
+  <meta name="description" content="Halaman landing VideyHub, redirect aman dengan tampilan menarik.">
+  <meta name="robots" content="index, follow">
 
   <style>
     body {
       background: #ffffff;
-      margin-bottom: 200px;
+      margin: 0;
+      padding-bottom: 200px;
       font-family: Arial, sans-serif;
+      text-align: center;
     }
 
     @keyframes BackgroundGradient {
@@ -30,9 +39,9 @@
       );
       background-size: 450% 100%;
       animation: BackgroundGradient 30s ease infinite;
-      padding: 20px;
-      margin: 30px;
-      border-radius: 12px;
+      padding: 25px;
+      margin: 20px;
+      border-radius: 15px;
     }
 
     .VCE_Title {
@@ -41,7 +50,8 @@
     }
 
     .JTime {
-      font-size: 20px;
+      font-size: 18px;
+      margin: 10px 0;
     }
 
     button {
@@ -53,13 +63,19 @@
       color: #ffffff;
       cursor: pointer;
     }
+
+    button:hover {
+      background: rgba(255,255,255,0.2);
+    }
   </style>
 </head>
 
 <body>
+
   <div class="VCE">
-    <h2 class="VCE_Title">Visual Code Editor</h2>
+    <h2 class="VCE_Title">VideyHub Landing Page</h2>
     <hr style="border: 3px solid #f2f2f2;">
+
     <p class="JTime">Klik tombol untuk menampilkan waktu</p>
 
     <button onclick="document.getElementById('Example').innerHTML = new Date().toString()">
@@ -67,7 +83,11 @@
     </button>
 
     <p class="JTime" id="Example"></p>
-    <p class="JTime">Halaman ini 100% compatible Netlify</p>
+
+    <p class="JTime">
+      Halaman ini sudah <b>100% siap GitHub Pages</b>
+    </p>
   </div>
+
 </body>
 </html>
