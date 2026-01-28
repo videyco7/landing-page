@@ -1,93 +1,90 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>VideyHub Landing Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
 
-  <!-- WAJIB untuk HP -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+}
 
-  <!-- SEO dasar -->
-  <meta name="description" content="Halaman landing VideyHub, redirect aman dengan tampilan menarik.">
-  <meta name="robots" content="index, follow">
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  <style>
-    body {
-      background: #ffffff;
-      margin: 0;
-      padding-bottom: 200px;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+/* Loader buffer ala video */
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background:
+    conic-gradient(white 0deg, rgba(255,255,255,0.2) 0deg);
+  mask: radial-gradient(circle 60%, transparent 61%);
+  z-index: 10;
+}
 
-    @keyframes BackgroundGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .VCE {
-      color: #f2f2f2;
-      background: linear-gradient(
-        45deg,
-        #FCE38A,
-        #f5ad4d,
-        #fd81b5,
-        #f74689,
-        #ad5af3,
-        #8a13ef
-      );
-      background-size: 450% 100%;
-      animation: BackgroundGradient 30s ease infinite;
-      padding: 25px;
-      margin: 20px;
-      border-radius: 15px;
-    }
-
-    .VCE_Title {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .JTime {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-
-    button {
-      font-size: 16px;
-      padding: 15px 22px;
-      border: 3px solid #f2f2f2;
-      border-radius: 20px;
-      background: transparent;
-      color: #ffffff;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: rgba(255,255,255,0.2);
-    }
-  </style>
+/* Tombol */
+.button {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff2d2d;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  z-index: 10;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="VCE">
-    <h2 class="VCE_Title">VideyHub Landing Page</h2>
-    <hr style="border: 3px solid #f2f2f2;">
+<video autoplay muted loop playsinline>
+  <source src="https://res.cloudinary.com/db7ydvohy/video/upload/bigo_bigolive_rmhff9.mp4" type="video/mp4">
+</video>
 
-    <p class="JTime">Klik tombol untuk menampilkan waktu</p>
+<div class="loader" id="loader"></div>
 
-    <button onclick="document.getElementById('Example').innerHTML = new Date().toString()">
-      Tampilkan Tanggal & Waktu
-    </button>
+<a href="https://www.effectivegatecpm.com/b29fkyqsa?key=da2a5b7f16814d1431018f8c5701a9a2"
+   class="button" id="btn" target="_blank" rel="noopener">
+  Lanjutkan
+</a>
 
-    <p class="JTime" id="Example"></p>
+<script>
+let deg = 0;
+let loader = document.getElementById('loader');
 
-    <p class="JTime">
-      Halaman ini sudah <b>100% siap GitHub Pages</b>
-    </p>
-  </div>
+let interval = setInterval(() => {
+  deg += 360 / 50; // 5 detik
+  loader.style.background =
+    `conic-gradient(white ${deg}deg, rgba(255,255,255,0.2) ${deg}deg)`;
+}, 100);
+
+setTimeout(() => {
+  clearInterval(interval);
+  loader.style.display = "none";
+  document.getElementById('btn').style.display = "block";
+}, 5000);
+</script>
 
 </body>
 </html>
